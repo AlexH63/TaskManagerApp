@@ -3,7 +3,7 @@ This web application allows you to manage your daily routines into an easy-to-us
 
 You may add, delete, or modify existing task items.
 
-# Steps on how to run and test:
+## Steps on how to run and test:
 1. Clone the repo
 2. On the terminal, go to the TaskManagerApp/server directory
 3. type node server.js
@@ -24,5 +24,7 @@ You may add, delete, or modify existing task items.
 18. Select the 'Delete' button.
 19. Note that the task is removed from the list
 
-JavaScript is the main programming language of this web application and MongoDB is used to store user profiles and allow logging into the app. 
-React is used to display a flexible and user-friendly GUI for the end-user.
+## Resources utilized
+JavaScript is the main programming language of this web application and Node.js/MongoDB is used for account creation and authentication as well as storing tasks.
+React is used to display a flexible and user-friendly graphical user interface.
+Node.js is used to handle HTTP requests through Express, which is a minimalist web app framework for Node.js.
