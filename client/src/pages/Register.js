@@ -6,7 +6,7 @@ function Register() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const navigate = setNavigate();
+    const navigate = useNavigate();
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -26,7 +26,7 @@ function Register() {
     };
 
     return (
-        <diiv className="container">
+        <div className="container">
             <h2>Register</h2>
 
             <form onSubmit={handleRegister}>
@@ -35,7 +35,7 @@ function Register() {
                 <input placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
                 <button type="submit">Register</button>
             </form>
-        </diiv>
+        </div>
     );
 }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TaskForm from "../components/TaskForm";
-import TaskItem from "../components/TaskItem";
+import TaskItem from "../components/TaskItem.js";
 
 function Dashboard() {
     const [tasks, setTasks] = useState([]);
@@ -28,16 +28,16 @@ function Dashboard() {
     };
 
     // Delete Task
-    const deleteTask = async (id) => {
-        await axios.delete(`http://localhost:5000/api/${id}`, {
+    const deleteTask = async (_id) => {
+        await axios.delete(`http://localhost:5000/api/tasks/${_id}`, {
             headers: { Authorization: token }
         });
         fetchTasks();
     };
 
     // Update Task
-    const updateTask = async (id, updatedTask) => {
-        await axios.put(`http://localhost:5000/api/${id}`, updatedTask, {
+    const updateTask = async (_id, updatedTask) => {
+        await axios.put(`http://localhost:5000/api/tasks/${_id}`, updatedTask, {
             headers: { Authorization: token }
         });
         fetchTasks();
