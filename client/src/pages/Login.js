@@ -41,9 +41,9 @@ function Login(){
                 />
                 <button type="submit">Login</button>
             </form>
-            <p onClick={() => navigate("/register")}>
+            <a href="/register">
                 Create an account
-            </p>
+            </a>
         </div>
     );
 }

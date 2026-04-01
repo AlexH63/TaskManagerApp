@@ -1,4 +1,5 @@
-.containier {
+.container {
+  border: 1px solid #ccc;
   max-width: 600px;
   margin: auto;
   text-align: center;
@@ -6,13 +7,23 @@
 
 input {
   display: block;
-  width: 100%;
+  width: 500px;
   margin: 10px 0;
+  margin-left: 10px;
   padding: 8px;
+}
+
+.buttonContainer {
+  display:flex;
+  margin-left: 10px; 
+  margin-bottom: 10px;
+  gap: 10px;
 }
 
 .task {
   border: 1px solid #ccc;
+  background-color: rgb(245, 238, 162);
   padding: 10px;
   margin-top: 10px;
+  text-align:left;
 }

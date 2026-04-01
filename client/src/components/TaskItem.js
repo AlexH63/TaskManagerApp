@@ -26,9 +26,11 @@ function TaskItem({ task, onDelete, onUpdate }) {
                 <>
                     <h3>{task.title}</h3>
                     <p>{task.description}</p>
-
-                    <button onClick={() => setIsEditing(true)}>Edit</button>
-                    <button onClick={() => onDelete(task._id)}>Delete</button>
+                    <div class="buttonContainer">
+                        <button onClick={() => setIsEditing(true)}>Edit</button>
+                        <button onClick={() => onDelete(task._id)}>Delete</button>
+                    </div>
+                    
                 </>
             )}
         </div>
