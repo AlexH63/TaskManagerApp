@@ -26,15 +26,18 @@ function Register() {
     };
 
     return (
-        <div className="container">
-            <h2>Register</h2>
+        <div className="baseContainer">
+            <h1>Task Manager</h1>
+            <div className="container">
+                <h2>Register</h2>
 
-            <form onSubmit={handleRegister}>
-                <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} required/>
-                <input placeholder="email" onChange={(e) => setEmail(e.target.value)} required/>
-                <input placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
-                <button type="submit">Register</button>
-            </form>
+                <form onSubmit={handleRegister}>
+                    <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} required/>
+                    <input placeholder="email" onChange={(e) => setEmail(e.target.value)} required/>
+                    <input placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
         </div>
     );
 }

@@ -11,7 +11,6 @@ function TaskItem({ task, onDelete, onUpdate }) {
         setIsEditing(false);
     };
 
-
     return(
         <div className="task">
             {editing ? (

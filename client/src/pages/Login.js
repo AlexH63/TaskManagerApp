@@ -23,27 +23,30 @@ function Login(){
     };
 
     return(
-        <div className="container">
-            <h2>Login</h2>
+        <div className="baseContainer">
+            <h1>Task Manager</h1>
+            <div className="container">
+                <h2>Login</h2>
 
-            <form onSubmit={handleLogin}>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit">Login</button>
-            </form>
-            <a href="/register">
-                Create an account
-            </a>
+                <form onSubmit={handleLogin}>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <button type="submit">Login</button>
+                </form>
+                <a href="/register">
+                    Create an account
+                </a>
+            </div>
         </div>
     );
 }

@@ -44,18 +44,21 @@ function Dashboard() {
     };
 
     return(
-        <div className="container">
-            <h2>My Tasks</h2>
+        <div className="baseContainer">
+            <h1>Task Manager</h1>
+            <div className="container">
+                <h2>My Tasks</h2>
 
-            <TaskForm onAdd={addTask} />
-            {tasks.map(task => (
-                <TaskItem
-                    key={task._id}
-                    task={task}
-                    onDelete={deleteTask}
-                    onUpdate={updateTask}
-                />
-            ))}
+                <TaskForm onAdd={addTask} />
+                {tasks.map(task => (
+                    <TaskItem
+                        key={task._id}
+                        task={task}
+                        onDelete={deleteTask}
+                        onUpdate={updateTask}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

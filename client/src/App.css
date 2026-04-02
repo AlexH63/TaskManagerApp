@@ -1,5 +1,20 @@
+.baseContainer {
+  background-image: url("./images/TaskManagerWallpaper.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+}
+h1 {
+  background-color: rgb(168, 168, 168);
+  text-align: center;
+}
+
 .container {
-  border: 1px solid #ccc;
+  border: 1px solid #aaa;
+  background-color: white;
   max-width: 600px;
   margin: auto;
   text-align: center;
