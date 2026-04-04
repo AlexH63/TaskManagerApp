@@ -4,63 +4,63 @@ import TaskForm from "../components/TaskForm";
 import TaskItem from "../components/TaskItem.js";
 
 function Dashboard() {
-    const [tasks, setTasks] = useState([]);
-    const token = localStorage.getItem("token");
+  const [tasks, setTasks] = useState([]);
+  const token = localStorage.getItem("token");
 
-    // Fetch Tasks
-    const fetchTasks = async () => {
-        const res = await axios.get("http://localhost:5000/api/tasks", {
-            headers: { Authorization: token}
-        });
-        setTasks(res.data);
-    };
+  // Fetch Tasks
+  const fetchTasks = async () => {
+    const res = await axios.get("http://localhost:5000/api/tasks", {
+      headers: { Authorization: token },
+    });
+    setTasks(res.data);
+  };
 
-    useEffect(() => {
-        fetchTasks();
-    }, []);
+  useEffect(() => {
+    fetchTasks();
+  }, []);
 
-    // Add Task
-    const addTask = async (task) => {
-        await axios.post("http://localhost:5000/api/tasks", task, {
-            headers: { Authorization: token }
-        });
-        fetchTasks();
-    };
+  // Add Task
+  const addTask = async (task) => {
+    await axios.post("http://localhost:5000/api/tasks", task, {
+      headers: { Authorization: token },
+    });
+    fetchTasks();
+  };
 
-    // Delete Task
-    const deleteTask = async (_id) => {
-        await axios.delete(`http://localhost:5000/api/tasks/${_id}`, {
-            headers: { Authorization: token }
-        });
-        fetchTasks();
-    };
+  // Delete Task
+  const deleteTask = async (_id) => {
+    await axios.delete(`http://localhost:5000/api/tasks/${_id}`, {
+      headers: { Authorization: token },
+    });
+    fetchTasks();
+  };
 
-    // Update Task
-    const updateTask = async (_id, updatedTask) => {
-        await axios.put(`http://localhost:5000/api/tasks/${_id}`, updatedTask, {
-            headers: { Authorization: token }
-        });
-        fetchTasks();
-    };
+  // Update Task
+  const updateTask = async (_id, updatedTask) => {
+    await axios.put(`http://localhost:5000/api/tasks/${_id}`, updatedTask, {
+      headers: { Authorization: token },
+    });
+    fetchTasks();
+  };
 
-    return(
-        <div className="baseContainer">
-            <h1>Task Manager</h1>
-            <div className="container">
-                <h2>My Tasks</h2>
+  return (
+    <div className="baseContainer">
+      <h1>Task Manager</h1>
+      <div className="container">
+        <h2>My Tasks</h2>
 
-                <TaskForm onAdd={addTask} />
-                {tasks.map(task => (
-                    <TaskItem
-                        key={task._id}
-                        task={task}
-                        onDelete={deleteTask}
-                        onUpdate={updateTask}
-                    />
-                ))}
-            </div>
-        </div>
-    );
+        <TaskForm onAdd={addTask} />
+        {tasks.map((task) => (
+          <TaskItem
+            key={task._id}
+            task={task}
+            onDelete={deleteTask}
+            onUpdate={updateTask}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Dashboard;

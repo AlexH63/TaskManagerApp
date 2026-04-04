@@ -20,7 +20,7 @@ h1 {
   text-align: center;
 }
 
-input {
+input:not(#colorPicker) {
   display: block;
   width: 500px;
   margin: 10px 0;
@@ -29,16 +29,15 @@ input {
 }
 
 .buttonContainer {
-  display:flex;
-  margin-left: 10px; 
+  display: flex;
+  margin-left: 10px;
   margin-bottom: 10px;
   gap: 10px;
 }
 
 .task {
   border: 1px solid #ccc;
-  background-color: rgb(245, 238, 162);
   padding: 10px;
   margin-top: 10px;
-  text-align:left;
+  text-align: left;
 }

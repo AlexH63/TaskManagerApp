@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Debug route
 app.get("/", (res) => {
-    res.send("Backend is running!");
+  res.send("Backend is running!");
 });
 
 // Routes
@@ -25,12 +25,13 @@ app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("MongoDB connected"))
-    .catch(err => console.log("MongoDB error: ", err));
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log("MongoDB error: ", err));
 
 // Start server
 const PORT = 5000;
 app.listen(PORT, () => {
-    console.log(`Server running on port 5000 ${PORT}`)
+  console.log(`Server running on port 5000 ${PORT}`);
 });
